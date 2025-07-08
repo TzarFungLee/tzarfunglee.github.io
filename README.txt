@@ -1,3 +1,3 @@
-© 2022 Rick Lee. All Rights Reserved.
+© 2022 Tzar Fung Lee. All Rights Reserved.
 
 A showcase portfolio for visual presentation and file storage.
