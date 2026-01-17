@@ -1,239 +1,276 @@
-<!DOCTYPE HTML>
-<!--
-	Dimension by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
-<html>
-	<head>
-		<title>TF Portfolio</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-		<link rel="icon" type="image/x-icon" href="/images/favicon.ico?">
-	</head>
-	<body class="is-preload">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Class Resources</title>
+    <style>
+        :root { --primary: #2563eb; --bg: #f8fafc; --surface: #ffffff; --text: #1e293b; --border: #e2e8f0; }
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: var(--bg); color: var(--text); padding: 20px; line-height: 1.6; }
+        .container { max-width: 900px; margin: 0 auto; }
+        
+        /* Navigation */
+        .nav-bar { margin-bottom: 20px; }
+        .back-btn { background: none; border: none; color: var(--primary); cursor: pointer; font-size: 1rem; display: flex; align-items: center; padding: 0; }
+        .back-btn:hover { text-decoration: underline; }
 
-		<!-- Wrapper -->
-			<div id="wrapper">
+        /* Headers */
+        header { text-align: center; margin-bottom: 30px; }
+        h1 { color: var(--primary); margin-bottom: 5px; }
+        .subtitle { color: #64748b; font-size: 0.95rem; }
 
-				<!-- Header -->
-					<header id="header">
-						<div class="logo">
-							<span class="icon fa-gem"></span>
-						</div>
-						<div class="content">
-							<div class="inner">
-								<h1>TZAR FUNG (RICK) LEE</h1>
-							</div>
-						</div>
-						<nav>
-							<ul>
-								<li><a href="#intro">About</a></li>
-								<li><a href="#work">Work</a></li>
-								<li><a href="#about">CV</a></li>
-								<li><a href="#contact">Writing</a></li>
-								<!--<li><a href="#elements">Elements</a></li>-->
-							</ul>
-						</nav>
-					</header>
+        /* TABS - NEW ADDITION */
+        .tabs {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+        .tab-btn {
+            background: white;
+            border: 1px solid var(--border);
+            padding: 8px 24px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: 500;
+            color: #64748b;
+            transition: all 0.2s;
+        }
+        .tab-btn:hover { background: #f1f5f9; }
+        .tab-btn.active {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
+            box-shadow: 0 2px 4px rgba(37, 99, 235, 0.2);
+        }
 
-				<!-- Main -->
-					<div id="main">
+        /* Search & List */
+        .search-wrapper { margin-bottom: 25px; }
+        input { width: 100%; padding: 12px; border: 1px solid var(--border); border-radius: 8px; font-size: 1rem; box-sizing: border-box; }
+        
+        .resource-card {
+            background: var(--surface);
+            padding: 20px;
+            border-radius: 8px;
+            border: 1px solid var(--border);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+        .resource-card:hover { transform: translateY(-2px); box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1); }
+        .tag { display: inline-block; padding: 2px 8px; border-radius: 12px; font-size: 0.75rem; background: #e0e7ff; color: #3730a3; margin-right: 8px; }
+        
+        /* SUBPAGE STYLES */
+        .subpage-content { background: var(--surface); padding: 30px; border-radius: 8px; border: 1px solid var(--border); }
+        .subpage-header { border-bottom: 2px solid var(--border); padding-bottom: 15px; margin-bottom: 20px; }
+        
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            background: #eee;
+            border-radius: 8px;
+            margin-bottom: 25px;
+        }
+        .video-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
 
-						<!-- Intro -->
-							<article id="intro">
-								<h2 class="major">About Me</h2>
-							
-								<p>A reliable, hardworking professional, pays attention to details, with excellent interpersonal and time management skills; seeking further experience and training in teaching while working towards a career set in professional education.</p>
-															
-								<p>Recreational hobbies include writing, reading, and music.</p>
-							</article>
+        .essay-box {
+            background: #fdfbf7;
+            border-left: 4px solid var(--primary);
+            padding: 20px;
+            font-family: "Georgia", serif;
+            color: #333;
+            white-space: pre-wrap;
+            margin-bottom: 20px;
+        }
 
-						<!-- Work -->
-							<article id="work">
-								<h2 class="major">Work Experience</h2>
-								<h3>Teacher (GM)</h3>
-								Buddhist Wong Wan Tin College<i><br>(09/2024 - now)</i><br>
-								<hr>
-								<h3>Assistant Teacher</h3>
-								CNEC Lee I Yao Memorial Secondary School<i><br>(09/2023 - 07/2024)</i><br>
-								<hr>
-								<h3>Supply Teacher</h3>
-								Kowloon Tong School (Primary Section) <i><br>(01/2023 - 07/2023)</i><br>
-								<hr>
-								<h3>Assistant Teacher</h3>
-								Confucian Tai Shing Primary School <i><br>(08/2021 - 12/2022)</i><br>
-							
-							</article>
-`
-						<!-- About -->
-							<article id="about">
-								<h2 class="major">Curriculum Vitae</h2>
-								<h3>Postgraduate Diploma in Education (Secondary)*</h3>
-								The Education University of Hong Kong (EdUHK)
-								<hr>
-								<h3>Bachelor of Arts (Honours) in English for International Corpoate Communication</h3>
-								University of Central Lancashire
-								<br><li><i>First Class Honours<br><li>Director's List</li></i></li>
-								<hr>
-								<h3>International Baccalaureate</h3>
-								King George V School
-								<hr>
-								<h3>International General Certificate of Secondary Examination</h3>
-								King George V School
-								<hr>
-								<h3>Music</h3>
-								<li>ABRSM Grade 8 Flute Certificate</a></li>	
-								<li>ABRSM Grade 8 Saxophone Certificate</a></li>
-								<li>ABRSM Grade 5 Theory of Music Certificate</a></li>
-								<hr>
-								<h3>Others</h3>
-								<li>Basic Law and National Security Law Test Result</a></li>
-								<li>Language Proficiency Assessment for Teachers (English Language) Certificate</a></li>
-								<li>香港教育大學校友會:《有效課室管理與班級經營的策略》工作坊</a></li>	
-							</article>
+        .hidden { display: none !important; }
+        .btn { background-color: var(--primary); color: white; padding: 8px 16px; border-radius: 6px; text-decoration: none; display: inline-block; font-size: 0.9rem; border: none; cursor: pointer; }
+    </style>
+</head>
+<body>
 
-						<!-- Contact -->
-							<article id="contact">
-								<h2 class="major">Writing</h2>
-								<h3>Available for freelance opportunities</a></h3>
-								<h4><i><a href="mailto:tzarfunglee@icloud.com">*email</a></h4></i>		
-							</article>
+<div class="container">
+    
+    <!-- VIEW 1: THE LIST -->
+    <div id="listView">
+        <header>
+            <h1>📂 Course Materials</h1>
+            <div class="subtitle">Select your form to filter resources</div>
+        </header>
 
-						<!-- Elements -->
-							<article id="elements">
-								<h2 class="major">Elements</h2>
+        <!-- NEW TABS SECTION -->
+        <div class="tabs">
+            <button class="tab-btn active" onclick="filterTab('All', this)">All</button>
+            <button class="tab-btn" onclick="filterTab('S1', this)">S1</button>
+            <button class="tab-btn" onclick="filterTab('S2', this)">S2</button>
+            <button class="tab-btn" onclick="filterTab('S3', this)">S3</button>
+            <button class="tab-btn" onclick="filterTab('DSE', this)">DSE</button>
+        </div>
 
-								<section>
-									<h3 class="major">Text</h3>
-									<p>This is <b>bold</b> and this is <strong>strong</strong>. This is <i>italic</i> and this is <em>emphasized</em>.
-									This is <sup>superscript</sup> text and this is <sub>subscript</sub> text.
-									This is <u>underlined</u> and this is code: <code>for (;;) { ... }</code>. Finally, <a href="#">this is a link</a>.</p>
-									<hr />
-									<h2>Heading Level 2</h2>
-									<h3>Heading Level 3</h3>
-									<h4>Heading Level 4</h4>
-									<h5>Heading Level 5</h5>
-									<h6>Heading Level 6</h6>
-									<hr />
-									<h4>Blockquote</h4>
-									<blockquote>Fringilla nisl. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan faucibus. Vestibulum ante ipsum primis in faucibus lorem ipsum dolor sit amet nullam adipiscing eu felis.</blockquote>
-									<h4>Preformatted</h4>
-									<pre><code>i = 0;
+        <div class="search-wrapper">
+            <input type="text" id="search" placeholder="🔍 Search resources..." onkeyup="renderList()">
+        </div>
 
-while (!deck.isInOrder()) {
-    print 'Iteration ' + i;
-    deck.shuffle();
-    i++;
-}
+        <div id="list" class="resource-list">
+            <!-- Items injected by JS -->
+        </div>
+    </div>
 
-print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
-								</section>
+    <!-- VIEW 2: THE SUBPAGE -->
+    <div id="detailView" class="hidden">
+        <div class="nav-bar">
+            <button onclick="showList()" class="back-btn">← Back to List</button>
+        </div>
+        <div id="detailContent" class="subpage-content">
+            <!-- Content injected by JS -->
+        </div>
+    </div>
 
-									<h4>Actions</h4>
-									<ul class="actions">
-										<li><a href="#" class="button primary">Default</a></li>
-										<li><a href="#" class="button">Default</a></li>
-									</ul>
-									<ul class="actions stacked">
-										<li><a href="#" class="button primary">Default</a></li>
-										<li><a href="#" class="button">Default</a></li>
-									</ul>
-								</section>
+</div>
 
-								<section>
-									<h3 class="major">Buttons</h3>
-									<ul class="actions">
-										<li><a href="#" class="button primary">Primary</a></li>
-										<li><a href="#" class="button">Default</a></li>
-									</ul>
-									<ul class="actions">
-										<li><a href="#" class="button">Default</a></li>
-										<li><a href="#" class="button small">Small</a></li>
-									</ul>
-									<ul class="actions">
-										<li><a href="#" class="button primary icon solid fa-download">Icon</a></li>
-										<li><a href="#" class="button icon solid fa-download">Icon</a></li>
-									</ul>
-									<ul class="actions">
-										<li><span class="button primary disabled">Disabled</span></li>
-										<li><span class="button disabled">Disabled</span></li>
-									</ul>
-								</section>
+<script>
+    // ==========================================
+    // DATA CONFIGURATION
+    // Note: 'level' field matches the Tab names (S1, S2, etc.)
+    // ==========================================
+    const resources = [
+        {
+            id: 1,
+            title: "Intro to Past Tense",
+            subject: "English",
+            level: "S1", 
+            notes: "Week 1 Grammar",
+            link: "https://google.com" 
+        },
+        {
+            id: 2,
+            title: "Linear Equations",
+            subject: "Math",
+            level: "S2",
+            notes: "Chapter 5",
+            link: "https://google.com"
+        },
+        {
+            id: 3,
+            title: "Essay Writing Structures",
+            subject: "English",
+            level: "DSE",
+            notes: "Argumentative essays",
+            htmlContent: `
+                <div class="subpage-header">
+                    <h2>Argumentative Essay Writing (DSE)</h2>
+                    <p>Focus: Structure, counter-arguments, and topic sentences.</p>
+                </div>
 
-								<section>
-									<h3 class="major">Form</h3>
-									<form method="post" action="#">
-										<div class="fields">
-											<div class="field half">
-												<label for="demo-name">Name</label>
-												<input type="text" name="demo-name" id="demo-name" value="" placeholder="Jane Doe" />
-											</div>
-											<div class="field half">
-												<label for="demo-email">Email</label>
-												<input type="email" name="demo-email" id="demo-email" value="" placeholder="jane@untitled.tld" />
-											</div>
-											<div class="field">
-												<label for="demo-category">Category</label>
-												<select name="demo-category" id="demo-category">
-													<option value="">-</option>
-													<option value="1">Manufacturing</option>
-													<option value="1">Shipping</option>
-													<option value="1">Administration</option>
-													<option value="1">Human Resources</option>
-												</select>
-											</div>
-											<div class="field half">
-												<input type="radio" id="demo-priority-low" name="demo-priority" checked>
-												<label for="demo-priority-low">Low</label>
-											</div>
-											<div class="field half">
-												<input type="radio" id="demo-priority-high" name="demo-priority">
-												<label for="demo-priority-high">High</label>
-											</div>
-											<div class="field half">
-												<input type="checkbox" id="demo-copy" name="demo-copy">
-												<label for="demo-copy">Email me a copy</label>
-											</div>
-											<div class="field half">
-												<input type="checkbox" id="demo-human" name="demo-human" checked>
-												<label for="demo-human">Not a robot</label>
-											</div>
-											<div class="field">
-												<label for="demo-message">Message</label>
-												<textarea name="demo-message" id="demo-message" placeholder="Enter your message" rows="6"></textarea>
-											</div>
-										</div>
-										<ul class="actions">
-											<li><input type="submit" value="Send Message" class="primary" /></li>
-											<li><input type="reset" value="Reset" /></li>
-										</ul>
-									</form>
-								</section>
+                <h3>1. Lecture Slides</h3>
+                <p>Review the slide deck from Tuesday's lesson below.</p>
+                
+                <div class="video-container">
+                    <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vR6x_dD-sKq-tAPFqI6LzQ8V_V7V8zL4F6kX-pQ/embed?start=false&loop=false&delayms=3000" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+                </div>
 
-							</article>
+                <h3>2. Sample Essay</h3>
+                <div class="essay-box">
+Topic: Should school uniforms be abolished?
 
-					</div>
+The debate surrounding mandatory school uniforms has persisted for decades...
+[ Teacher text here ]
+                </div>
+            `
+        },
+        {
+            id: 4,
+            title: "Science: Photosynthesis",
+            subject: "Science",
+            level: "S3",
+            notes: "Biology Unit",
+            link: "https://google.com"
+        }
+    ];
 
-				<!-- Footer -->
-					<footer id="footer">
-						<h5>“Education is not preparation for life; education is life itself.” - John Dewey</h5>
-						<p class="copyright">Innovate. Create. Educate.</p>
-					</footer>
+    // ==========================================
+    // APP LOGIC
+    // ==========================================
+    
+    let currentTab = 'All';
 
-			</div>
+    function filterTab(tabName, btnElement) {
+        currentTab = tabName;
+        
+        // Update visual tabs
+        document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+        btnElement.classList.add('active');
 
-		<!-- BG -->
-			<div id="bg"></div>
+        renderList();
+    }
 
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
+    function renderList() {
+        const query = document.getElementById('search').value.toLowerCase();
+        const container = document.getElementById('list');
+        container.innerHTML = '';
 
-	</body>
+        const filtered = resources.filter(item => {
+            // 1. Check Search Text
+            const matchesSearch = item.title.toLowerCase().includes(query) || 
+                                  item.subject.toLowerCase().includes(query);
+            
+            // 2. Check Tab Filter
+            // If tab is All, we show everything.
+            // If tab is S1/S2/S3/DSE, we check if the item's level includes that text.
+            // Example: item level "F.4 (DSE)" would match the "DSE" tab.
+            const matchesTab = currentTab === 'All' || item.level.includes(currentTab);
+
+            return matchesSearch && matchesTab;
+        });
+
+        if (filtered.length === 0) {
+            container.innerHTML = `<div style="text-align:center; padding:40px; color:#94a3b8">No resources found for ${currentTab}.</div>`;
+            return;
+        }
+
+        filtered.forEach(item => {
+            const div = document.createElement('div');
+            div.className = 'resource-card';
+            const action = item.htmlContent ? `onclick="openPage(${item.id})"` : `onclick="window.open('${item.link}', '_blank')"`;
+            const btnText = item.htmlContent ? "View Page" : "Open Link ↗";
+
+            div.innerHTML = `
+                <div onclick="event.stopPropagation(); ${action}" style="flex-grow:1">
+                    <h3 style="margin:0 0 5px 0">${item.title}</h3>
+                    <div style="font-size:0.85rem; color:#64748b">
+                        <span class="tag">${item.level}</span> <span class="tag" style="background:#f1f5f9; color:#475569">${item.subject}</span> ${item.notes}
+                    </div>
+                </div>
+                <button class="btn" ${action}>${btnText}</button>
+            `;
+            container.appendChild(div);
+        });
+    }
+
+    function openPage(id) {
+        const item = resources.find(r => r.id === id);
+        if(!item || !item.htmlContent) return;
+
+        document.getElementById('listView').classList.add('hidden');
+        document.getElementById('detailView').classList.remove('hidden');
+        document.getElementById('detailContent').innerHTML = item.htmlContent;
+        window.scrollTo(0,0);
+    }
+
+    function showList() {
+        document.getElementById('detailView').classList.add('hidden');
+        document.getElementById('listView').classList.remove('hidden');
+        document.getElementById('detailContent').innerHTML = ''; 
+    }
+
+    renderList();
+</script>
+
+</body>
 </html>
