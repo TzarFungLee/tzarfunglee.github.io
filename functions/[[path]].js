@@ -3,7 +3,12 @@ export async function onRequest(context) {
 
   // 1. Define the target URL (your second project's .pages.dev URL)
   // Ensure there is no trailing slash here
-  const targetHost = "https://teachingarchive.pages.dev"; 
+  // OLD
+  const targetHost = "https://teachingarchive.pages.dev";
+
+// NEW
+const targetHost = "https://archive.tzarfunglee.com"; 
+
 
   // 2. Rewrite the path
   // This strips "/teachingarchive" so the second project sees a request for "/" 
