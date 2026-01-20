@@ -1,7 +1,7 @@
 export async function onRequest(context) {
   const url = new URL(context.request.url);
 
-  const targetHost = "https://tzarfunglee.com"; 
+  const targetHost = "https://www.tzarfunglee.com"; 
 
   // Rewrite the path
   // This strips "/teachingarchive" so the second project sees a request for "/" 
